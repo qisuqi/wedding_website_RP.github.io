@@ -49,6 +49,40 @@
         }
     </script>
 
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("June 14, 2025 00:00:00").getTime();
+
+        // Update the countdown every 1 second
+        var x = setInterval(function() {
+
+            // Get the current date and time
+            var now = new Date().getTime();
+
+            // Calculate the time remaining
+            var distance = countDownDate - now;
+
+            // Calculate days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+            // Display the result in the element with id="countdown"
+            document.getElementById("countdown").innerHTML = days + " days left! ";
+
+            // If the countdown is finished, display a message
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    </script>
+
+    <style>
+        #countdown {
+            font-size: 24px;
+            text-align: center;
+        }
+    </style>
+
     <link rel="stylesheet" href="css/normalize.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/jquery.fancybox.css">
@@ -117,9 +151,10 @@
         <div class="row">
             <div class="col-md-12 text-center">
                 <h3>We are getting married!</h3>
-                <p>The dates are 14<sup>th</sup> of June 2024 and we would like you to be a part of
+                <p>The date is 14<sup>th</sup> of June 2024 and we would like you to be a part of
                     it.</p>
             </div>
+            <div id="countdown"></div>
         </div>
     </div>
 </section>
@@ -286,6 +321,7 @@
             <div class="col-md-12 text-center">
                 <h3 class="header">Dress Code</h3>
                 <p>Dress to Impress!</p>
+                <p>But if you could find something in bright pastel palette, then that would be amazing!</p>
             </div>
         </div>
     </div>
