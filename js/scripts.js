@@ -33,17 +33,12 @@ $(document).ready(function () {
         offset: '75%'
     });
     $('.wp7').waypoint(function () {
-        $('.wp7').addClass('animated fadeInUp');
+        $('.wp7').addClass('animated fadeInLeft');
     }, {
         offset: '75%'
     });
     $('.wp8').waypoint(function () {
-        $('.wp8').addClass('animated fadeInLeft');
-    }, {
-        offset: '75%'
-    });
-    $('.wp9').waypoint(function () {
-        $('.wp9').addClass('animated fadeInRight');
+        $('.wp8').addClass('animated fadeInUp');
     }, {
         offset: '75%'
     });
@@ -184,23 +179,23 @@ $(document).ready(function () {
         },
         data: {
             // Event title
-            title: "Ram and Antara's Wedding",
+            title: "Qiqi & George's Wedding",
 
             // Event start date
-            start: new Date('Nov 27, 2017 10:00'),
+            start: new Date('Jun 14, 2025 12:00'),
 
             // Event duration (IN MINUTES)
             // duration: 120,
 
             // You can also choose to set an end time
             // If an end time is set, this will take precedence over duration
-            end: new Date('Nov 29, 2017 00:00'),
+            end: new Date('Jun 14, 2025 23:30'),
 
             // Event Address
-            address: 'ITC Fortune Park Hotel, Kolkata',
+            address: 'High Billinghurst Farm',
 
             // Event Description
-            description: "We can't wait to see you on our big day. For any queries or issues, please contact Mr. Amit Roy at +91 9876543210."
+            description: "We can't wait to see you on our big day! <3"
         }
     });
 
@@ -214,11 +209,11 @@ $(document).ready(function () {
 
         $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
 
-        if (MD5($('#invite_code').val()) !== 'b0e53b10c1f55ede516b240036b88f40'
-            && MD5($('#invite_code').val()) !== '2ac7f43695eb0479d5846bb38eec59cc') {
+
+        if (MD5($('#invite_code').val()) !== '77d235e1d501503516c57bbecbbafdf6')  {
             $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
         } else {
-            $.post('https://script.google.com/macros/s/AKfycbyo0rEknln8LedEP3bkONsfOh776IR5lFidLhJFQ6jdvRiH4dKvHZmtoIybvnxpxYr2cA/exec', data)
+            $.post('https://script.google.com/macros/s/AKfycbzm_2eJ82TE1eaQwJjZy9RqsQIYSaAzUvjVcB6OjHRAsYC4q7q3kesSdePGLUw71IGmjA/exec', data)
                 .done(function (data) {
                     console.log(data);
                     if (data.result === "error") {

@@ -49,6 +49,40 @@
         }
     </script>
 
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("June 14, 2025 00:00:00").getTime();
+
+        // Update the countdown every 1 second
+        var x = setInterval(function() {
+
+            // Get the current date and time
+            var now = new Date().getTime();
+
+            // Calculate the time remaining
+            var distance = countDownDate - now;
+
+            // Calculate days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+            // Display the result in the element with id="countdown"
+            document.getElementById("countdown").innerHTML = days + " days left! ";
+
+            // If the countdown is finished, display a message
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    </script>
+
+    <style>
+        #countdown {
+            font-size: 24px;
+            text-align: center;
+        }
+    </style>
+
     <link rel="stylesheet" href="css/normalize.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/jquery.fancybox.css">
@@ -64,6 +98,7 @@
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
     your browser</a> to improve your experience.</p>
 <![endif]-->
+
 <section class="hero">
     <section class="navigation">
         <header>
@@ -95,8 +130,9 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="hero-content text-center">
                     <!--<h1>Ram and Antara</h1>-->
-                    <img src="img/logo-lg.png">
-                    <!--<p class="intro">Ram & Antara are getting hitched!</p>-->
+                    <!--<img src="img/logo-lg.png">-->
+                    <p class="intro" style="font-family: 'Indie Flower', cursive; font-size: 66px;">
+                        - Qiqi and George -</p>
                     <!--<a href="#" class="btn btn-fill btn-large btn-margin-right">Scroll Down</a> -->
                 </div>
             </div>
@@ -116,9 +152,10 @@
         <div class="row">
             <div class="col-md-12 text-center">
                 <h3>We are getting married!</h3>
-                <p>The dates are 14<sup>th</sup> of June 2024 and we would like you to be a part of
+                <p>The date is 14<sup>th</sup> of June 2024 and we would like you to be a part of
                     it.</p>
             </div>
+            <div id="countdown"></div>
         </div>
     </div>
 </section>
@@ -174,11 +211,109 @@
                 <p>There will be no sitting down meal for our wedding breakfast. Instead, we have two food vans to choose
                     from: Chinese and Pizza. Please limit to one portion per person. We also have a Greek food van
                     for the evening food.</p>
+                <div class="row section-padding">
+                    <div class="col-md-4 text-center">
+                        <a class="btn btn-accent btn-small" data-toggle="modal" data-target="#chinese-modal">
+                            <i class="fa fa-barcode"></i>&nbsp;&nbsp;Chinese Food Menu
+                        </a>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <a class="btn btn-accent btn-small" data-toggle="modal" data-target="#pizza-modal">
+                            <i class="fa fa-barcode"></i>&nbsp;&nbsp;Pizza Menu
+                        </a>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <a class="btn btn-accent btn-small" data-toggle="modal" data-target="#greek-modal">
+                            <i class="fa fa-barcode"></i>&nbsp;&nbsp;Greek Food Menu
+                        </a>
+                    </div>
+                </div>
+
                 <h5>Drink</h5>
                 <p>We will provide a glass of bubbly upon arrival. All drinks will be £3 per drink.</p>
             </div>
         </div>
     </div>
+
+    <div id="chinese-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
+                    </button>
+                    <h3 class="text-center section-padding">Kang Foo Noodles</h3>
+                    <h5>Food 1 </h5>
+                    <p>
+                        Description
+                    </p>
+                    <h5>Food 2 </h5>
+                    <p>
+                        Description
+                    </p>
+                    <h5>Food 3 </h5>
+                    <p>
+                        Description
+                    </p>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div id="pizza-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
+                    </button>
+                    <h3 class="text-center section-padding">Three Wheeling Pizza</h3>
+                    <h5>Pepperoni</h5>
+                    <p>
+                        The second most popular pizza on our menu.
+                        Proper Italian pepperoni with a tomato sauce base and mozzarella.
+                    </p>
+                    <h5>Margherita </h5>
+                    <p>
+                        Named after Queen Margherita of Savoy, a total classic.
+                        Topped with tomato sauce, mozzarella and fresh basil.
+                    </p>
+                    <h5>Chickhen House </h5>
+                    <p>
+                        Succulent chicken breast, red onion, mushrooms, tomato base and mozzarella.
+                        A real crowd pleaser.
+                    </p>
+                    <h5>Garlic Mushroom </h5>
+                    <p>
+                        This is the one for all you garlic lovers, it is just so garlicky!!
+                        Tomato sauce, fresh copped garlic, extra virgin olive oil, mixed herbs, mushrooms and
+                        mozzarella.
+                    </p>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div id="greek-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
+                    </button>
+                    <h3 class="text-center section-padding">John the Greek</h3>
+                    <h5>Gourmet Greek Chicken Souvlaki Portion </h5>
+                    <p>
+                        Chicken Fillet wrapped in Greek Pitta Bread with all the trimmings, deep-fried Haloumi Cheese
+                        and our Oregano Fries in a paper tray
+                    </p>
+                    <h5>Gourmet Greek Vegetarian Souvlaki Portion </h5>
+                    <p>
+                        A selection of fresh and smoked vegetables served with all the trimmings and our Oregano Fries
+                        in a paper tray
+                    </p>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
 </section>
 
 <section id="dresscode" class="section-padding">
@@ -187,6 +322,11 @@
             <div class="col-md-12 text-center">
                 <h3 class="header">Dress Code</h3>
                 <p>Dress to Impress!</p>
+                <p>But if you could find something in the bright pastel palette, then that would be amazing!</p>
+                <p>Just one more small request on the dress code - similar to not wear something white to a western wedding,
+                    wearing red to weddings is traditionally reserved for the bride and groom in Chinese culture.
+                    So, we kindly ask that you avoid wearing red and white clothing to our
+                    ceremony and reception. Thank you! </p>
             </div>
         </div>
     </div>
@@ -225,7 +365,6 @@
         </div>
     </div>
 </section>
-
 
 <section id="map" class="section-padding">
     <div class="text-center">
@@ -282,7 +421,7 @@
                     <div class="row">
                         <div class="col-md-6 col-sm-6">
                             <div class="form-input-group">
-                                <i class="fa fa-users"></i><input type="number" name="extras" class="" min="0"
+                                <i class="fa fa-users"></i><input type="number" name="plus_ones" class="" min="0"
                                                                   max="1"
                                                                   placeholder="Plus Ones"
                                                                   required>
@@ -296,13 +435,28 @@
                                                                 required>
                             </div>
                         </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-input-group">
+                                <i class="fa fa-user"></i><input name="fav_drink" id="fav_drink"
+                                                                class=""
+                                                                placeholder="Your Favourite Drink"
+                                                                required>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                            <div class="form-input-group">
+                                <i class="fa fa-key"></i><input type="number" name="invite_code" id="invite_code"
+                                                                class="" min="0"
+                                                                placeholder="Invite code"
+                                                                required>
+                            </div>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12" id="alert-wrapper"></div>
                     </div>
                     <button class="btn-fill rsvp-btn">
-                        Yes,
-                        that's me!
+                        Done!
                     </button>
                 </form>
             </div>
@@ -329,23 +483,5 @@
 <script src="js/jquery.mb.YTPlayer.min.js"></script>
 <script src="js/vendor/ouical.js"></script>
 <script src="js/scripts.min.js"></script>
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlPw3GQYI3faa_9mRE6plWuM7xNEmrwH0&callback=initMap"></script>
-<!-- Google Analytics -->
-<script>
-    (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function () {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-    ga('create', 'UA-46465113-4', 'auto');
-    ga('send', 'pageview');
-</script>
 </body>
 </html>
