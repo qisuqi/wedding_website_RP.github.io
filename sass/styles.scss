@@ -915,3 +915,18 @@ body.modal-open {
 .modal-body {
   padding:25px;
 }
+
+/* ==========================================================================
+Extras
+========================================================================== */
+
+.box {
+  margin: 10px auto 10px;
+  width: 300px; /* Set the width of the box */
+  height: 105px; /* Set the height of the box */
+  background-color: #f0f0f0; /* Set the background color of the box */
+  border: 1px solid #ccc; /* Add a border to the box */
+  padding: 20px; /* Add padding inside the box */
+  text-align: center; /* Center align the text inside the box */
+  line-height: 1.5; /* Set line height for better readability */
+}
