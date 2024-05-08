@@ -170,6 +170,32 @@ $(document).ready(function () {
         $('#btn-show-content').toggleClass('toggle-map-content');
     });
 
+    /********************** Countdown **********************/
+    // Set the date we're counting down to
+    var countDownDate = new Date("June 14, 2025 00:00:00").getTime();
+
+    // Update the countdown every 1 second
+    var x = setInterval(function() {
+
+        // Get the current date and time
+        var now = new Date().getTime();
+
+        // Calculate the time remaining
+        var distance = countDownDate - now;
+
+        // Calculate days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+        // Display the result in the element with id="countdown"
+        document.getElementById("countdown").innerHTML = days + " days left! ";
+
+        // If the countdown is finished, display a message
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("countdown").innerHTML = "EXPIRED";
+        }
+    }, 1000);
+
     /********************** Add to Calendar **********************/
     var myCalendar = createCalendar({
         options: {
@@ -230,6 +256,34 @@ $(document).ready(function () {
         }
     });
 
+});
+
+document.getElementById('codeForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    var code = parseInt(document.getElementById('code').value); // Parse the entered code as an integer
+    console.log("Entered code:", code); // Debug statement
+
+    // Here you can define your secret code as a number
+    var correctCode = 140625; // Change this to your desired numeric code
+    console.log("Correct code:", correctCode); // Debug statement
+
+    // Check if entered code is correct
+    if (code === correctCode) {
+        console.log("Code is correct!"); // Debug statement
+        document.getElementById('invitation').classList.remove('hidden');
+        document.getElementById('timeline').classList.remove('hidden');
+        document.getElementById('fooddrink').classList.remove('hidden');
+        document.getElementById('dresscode').classList.remove('hidden');
+        document.getElementById('accommodation').classList.remove('hidden');
+        document.getElementById('other').classList.remove('hidden');
+        document.getElementById('map').classList.remove('hidden');
+        document.getElementById('rsvp').classList.remove('hidden');
+        document.getElementById('codeForm').style.display = 'none';
+    } else {
+        console.log("Incorrect code!"); // Debug statement
+        alert('Incorrect code! Please try again.');
+    }
 });
 
 /********************** Extras **********************/

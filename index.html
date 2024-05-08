@@ -10,7 +10,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <title>Qiqi & George getting hitched!</title>
+    <title>Qiqi & George getting married!</title>
     <meta name="description" content="We would like to invite you to our big day.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#ffffff">
@@ -49,37 +49,16 @@
         }
     </script>
 
-    <script>
-        // Set the date we're counting down to
-        var countDownDate = new Date("June 14, 2025 00:00:00").getTime();
-
-        // Update the countdown every 1 second
-        var x = setInterval(function() {
-
-            // Get the current date and time
-            var now = new Date().getTime();
-
-            // Calculate the time remaining
-            var distance = countDownDate - now;
-
-            // Calculate days, hours, minutes and seconds
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-
-            // Display the result in the element with id="countdown"
-            document.getElementById("countdown").innerHTML = days + " days left! ";
-
-            // If the countdown is finished, display a message
-            if (distance < 0) {
-                clearInterval(x);
-                document.getElementById("countdown").innerHTML = "EXPIRED";
-            }
-        }, 1000);
-    </script>
-
     <style>
         #countdown {
             font-size: 24px;
             text-align: center;
+        }
+    </style>
+
+    <style>
+        .hidden {
+            display: none;
         }
     </style>
 
@@ -139,15 +118,26 @@
         </div>
         <div class="row">
             <div class="col-sm-4 hidden-xs"></div>
-            <div class="col-sm-4 hidden-xs text-center"><a href="#rsvp"
-                                                           class="btn btn-accent btn-large rsvp-btn">RSVP</a></div>
             <div class="col-sm-4 hidden-xs"></div>
         </div>
     </div>
     <div class="down-arrow floating-arrow"><a href="#invitation"><i class="fa fa-angle-down"></i></a></div>
 </section>
 
-<section id="invitation" class="section-padding">
+<section class="section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <form id="codeForm">
+                    <input type="text" id="code" name="code" placeholder="Enter invitation code">
+                    <button type="submit" class="submit-button">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="invitation" class="section-padding hidden">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
@@ -160,7 +150,7 @@
     </div>
 </section>
 
-<section id="timeline" class="section-padding">
+<section id="timeline" class="section-padding hidden">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
@@ -202,7 +192,7 @@
     </div>
 </section>
 
-<section id="fooddrink" class="section-padding">
+<section id="fooddrink" class="section-padding hidden">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
@@ -316,7 +306,7 @@
 
 </section>
 
-<section id="dresscode" class="section-padding">
+<section id="dresscode" class="section-padding hidden">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
@@ -332,7 +322,7 @@
     </div>
 </section>
 
-<section id="accommodation" class="section-padding">
+<section id="accommodation" class="section-padding hidden">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
@@ -347,7 +337,7 @@
     </div>
 </section>
 
-<section id="other" class="section-padding">
+<section id="other" class="section-padding hidden">
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
@@ -366,7 +356,7 @@
     </div>
 </section>
 
-<section id="map" class="section-padding">
+<section id="map" class="section-padding hidden">
     <div class="text-center">
         <h3>Venue</h3>
         <h5>High Billinghurst Farm</h5>
@@ -376,8 +366,7 @@
     </div>
 </section>
 
-<section class="rsvp text-center" id="rsvp">
-
+<section class="rsvp text-center hidden" id="rsvp">
     <div id="rsvp-modal" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -437,7 +426,7 @@
                         </div>
                         <div class="col-md-6 col-sm-6">
                             <div class="form-input-group">
-                                <i class="fa fa-user"></i><input name="fav_drink" id="fav_drink"
+                                <i class="fa fa-glass"></i><input name="fav_drink" id="fav_drink"
                                                                 class=""
                                                                 placeholder="Your Favourite Drink"
                                                                 required>
