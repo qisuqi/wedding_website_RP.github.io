@@ -170,6 +170,24 @@ $(document).ready(function () {
         $('#btn-show-content').toggleClass('toggle-map-content');
     });
 
+    /********************** Weather **********************/
+    //const apiKey = 'YOUR_API_KEY';
+    //const venueLatitude = 'YOUR_VENUE_LATITUDE';
+    //const venueLongitude = 'YOUR_VENUE_LONGITUDE';
+
+    //fetch(`https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${venueLatitude},${venueLongitude}&days=1`)
+    //    .then(response => response.json())
+    //    .then(data => {
+    //        const forecast = data.forecast.forecastday[0];
+    //        const temperature = forecast.day.avgtemp_c;
+    //        const conditions = forecast.day.condition.text;
+    //        const weatherInfo = `Temperature: ${temperature}°C, Conditions: ${conditions}`;
+    //        document.getElementById('weather-info').textContent = weatherInfo;
+    //    })
+    //    .catch(error => {
+    //        console.error('Error fetching weather data:', error);
+    //    });
+
     /********************** Countdown **********************/
     // Set the date we're counting down to
     var countDownDate = new Date("June 14, 2025 00:00:00").getTime();
