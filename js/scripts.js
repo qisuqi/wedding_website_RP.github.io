@@ -88,7 +88,8 @@ $(document).ready(function () {
                 $('section.navigation').addClass('fixed');
                 $('header').css({
                     "border-bottom": "none",
-                    "padding": "35px 0"
+                    "padding": "35px 0",
+                    "background-color": "#bf515b"
                 });
                 $('header .member-actions').css({
                     "top": "26px",
@@ -100,7 +101,8 @@ $(document).ready(function () {
                 $('section.navigation').removeClass('fixed');
                 $('header').css({
                     "border-bottom": "solid 1px rgba(255, 255, 255, 0.2)",
-                    "padding": "50px 0"
+                    "padding": "50px 0",
+                    "background-color": "transparent"
                 });
                 $('header .member-actions').css({
                     "top": "41px",
@@ -340,6 +342,14 @@ function alert_markup(alert_type, msg) {
     return '<div class="alert alert-' + alert_type + '" role="alert">' + msg + '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span>&times;</span></button></div>';
 }
 
+setInterval(function() {
+    const gallery = document.querySelector('.image-gallery');
+    gallery.scrollBy({
+        left: 320, // Move 320px to the right (adjust based on your image width + gap)
+        behavior: 'smooth' // Smooth scrolling
+    });
+}, 3000); // 3000ms = 3 seconds
+
 // MD5 Encoding
 var MD5 = function (string) {
 
@@ -557,4 +567,5 @@ var MD5 = function (string) {
     var temp = WordToHex(a) + WordToHex(b) + WordToHex(c) + WordToHex(d);
 
     return temp.toLowerCase();
+
 };
