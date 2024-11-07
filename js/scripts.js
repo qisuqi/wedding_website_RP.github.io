@@ -88,7 +88,8 @@ $(document).ready(function () {
                 $('section.navigation').addClass('fixed');
                 $('header').css({
                     "border-bottom": "none",
-                    "padding": "35px 0"
+                    "padding": "35px 0",
+                    "background-color": "#bf515b"
                 });
                 $('header .member-actions').css({
                     "top": "26px",
@@ -100,7 +101,8 @@ $(document).ready(function () {
                 $('section.navigation').removeClass('fixed');
                 $('header').css({
                     "border-bottom": "solid 1px rgba(255, 255, 255, 0.2)",
-                    "padding": "50px 0"
+                    "padding": "50px 0",
+                    "background-color": "transparent"
                 });
                 $('header .member-actions').css({
                     "top": "41px",
@@ -557,4 +559,5 @@ var MD5 = function (string) {
     var temp = WordToHex(a) + WordToHex(b) + WordToHex(c) + WordToHex(d);
 
     return temp.toLowerCase();
+
 };
