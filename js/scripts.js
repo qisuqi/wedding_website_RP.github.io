@@ -342,14 +342,6 @@ function alert_markup(alert_type, msg) {
     return '<div class="alert alert-' + alert_type + '" role="alert">' + msg + '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span>&times;</span></button></div>';
 }
 
-setInterval(function() {
-    const gallery = document.querySelector('.image-gallery');
-    gallery.scrollBy({
-        left: 320, // Move 320px to the right (adjust based on your image width + gap)
-        behavior: 'smooth' // Smooth scrolling
-    });
-}, 3000); // 3000ms = 3 seconds
-
 // MD5 Encoding
 var MD5 = function (string) {
 
