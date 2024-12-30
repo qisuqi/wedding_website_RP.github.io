@@ -109,6 +109,7 @@ section .header {
   background-color: #000;
   border-radius: 4px;
 }
+
 /* ==========================================================================
 Animations
 ========================================================================== */
@@ -296,11 +297,8 @@ Navigation
 }
 
 .nav-toggle.active span:before {
-  -moz-transform: rotate(45deg);
+  transform: rotate(45deg);
   -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg)
 }
 
 .nav-toggle.active span:after {
