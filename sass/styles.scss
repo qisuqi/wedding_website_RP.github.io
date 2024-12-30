@@ -303,10 +303,7 @@ Navigation
 
 .nav-toggle.active span:after {
   top: 10px;
-  -moz-transform: translatey(-10px) rotate(-45deg);
   -ms-transform: translatey(-10px) rotate(-45deg);
-  -o-transform: translatey(-10px) rotate(-45deg);
-  -webkit-transform: translatey(-10px) rotate(-45deg);
   transform: translatey(-10px) rotate(-45deg)
 }
 
