@@ -342,6 +342,29 @@ function alert_markup(alert_type, msg) {
     return '<div class="alert alert-' + alert_type + '" role="alert">' + msg + '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span>&times;</span></button></div>';
 }
 
+// toggle check box
+function toggleInputs(checkbox) {
+    var additionalInputs = document.querySelectorAll('.additional-inputs');
+
+    if (checkbox.id === 'yes' && checkbox.checked) {
+        additionalInputs.forEach(function(input) {
+            input.style.display = 'block';
+        });
+        document.getElementById('no').checked = false; // Uncheck the "No" box
+    } else if (checkbox.id === 'no' && checkbox.checked) {
+        additionalInputs.forEach(function(input) {
+            input.style.display = 'none';
+        });
+        document.getElementById('yes').checked = false; // Uncheck the "Yes" box
+    } else {
+        additionalInputs.forEach(function(input)  {
+            input.style.display = 'none';
+        });
+    }
+}
+
+
+
 // MD5 Encoding
 var MD5 = function (string) {
 

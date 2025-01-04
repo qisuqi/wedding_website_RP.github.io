@@ -172,27 +172,31 @@
                         <p>Ceremony - 13:00</p>
                     </div>
                     <div class="image-item">
-                        <img src="img/pizza.jpg" alt="Image 3">
-                        <p>Wedding Breakfast - 14:00</p>
+                        <img src="img/camera.jpg" alt="Image 3">
+                        <p>Photos - 14:00</p>
                     </div>
                     <div class="image-item">
-                        <img src="img/hbh2.jpg" alt="Image 4">
+                        <img src="img/pizza.jpg" alt="Image 4">
+                        <p>Wedding Breakfast - 15:30</p>
+                    </div>
+                    <div class="image-item">
+                        <img src="img/hbh2.jpg" alt="Image 5">
                         <p>Reception - 17:00</p>
                     </div>
                     <div class="image-item">
-                        <img src="img/cake.jpg" alt="Image 5">
+                        <img src="img/cake.jpg" alt="Image 6">
                         <p>Cake - 18:00</p>
                     </div>
                     <div class="image-item">
-                        <img src="img/dance.jpg" alt="Image 6">
-                        <p>First Dance - 20:00</p>
+                        <img src="img/dance.jpg" alt="Image 7">
+                        <p>First Dance - 18:30</p>
                     </div>
                     <div class="image-item">
-                        <img src="img/food.jpg" alt="Image 7">
-                        <p>Evening Food - 21:00</p>
+                        <img src="img/food.jpg" alt="Image 8">
+                        <p>Evening Food - 20:45</p>
                     </div>
                     <div class="image-item">
-                        <img src="img/hbh3.jpg" alt="Image 8">
+                        <img src="img/hbh3.jpg" alt="Image 9">
                         <p>Home Time - 23:00</p>
                     </div>
                 </div>
@@ -446,16 +450,6 @@
                       action=""
                       method="POST">
                     <div class="row">
-                        <!--
-                        <div class="col-md-6 col-sm-6">
-                            <div class="form-input-group">
-                                <i class="fa fa-key"></i><input type="number" name="invite_code" id="invite_code"
-                                                                class="" min="0"
-                                                                placeholder="Invite code"
-                                                                required>
-                            </div>
-                        </div>
-                        -->
                         <div class="col-md-6 col-sm-6">
                             <div class="form-input-group">
                                 <i class="fa fa-user"></i><input name="name" class=""
@@ -464,29 +458,42 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-6">
+                            <label for="yes">
+                                <input type="checkbox" id="yes" name="response" value="yes" onclick="toggleInputs(this)">
+                                I can make it!
+                            </label>
+                            <label for="no" style="margin-left: 20px;">
+                                <input type="checkbox" id="no" name="response" value="no" onclick="toggleInputs(this)">
+                                Sadly, I can't make it :(
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 additional-inputs" id="additional-inputs" style="display: none">
                             <div class="form-input-group">
                                 <i class="fa fa-music"></i><input name="fav_song" id="fav_song"
                                                                   class=""
                                                                   placeholder="One song for the playlist"
-                                                                  required>
+                                                                  >
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6 col-sm-6">
+                        <div class="col-md-6 col-sm-6 additional-inputs" id="additional-inputs-1" style="display: none">
                             <div class="form-input-group">
                                 <i class="fa fa-wine-glass"></i><input name="fav_drink" id="fav_drink"
                                                                 class=""
                                                                 placeholder="Your Favourite Drinks"
-                                                                required>
+                                                                >
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-6">
+                        <div class="col-md-6 col-sm-6 additional-inputs" id="additional-inputs-2" style="display: none">
                             <div class="form-input-group">
                                 <i class="fa fa-cutlery"></i><input name="dietary" id="dietary"
                                                                   class=""
                                                                   placeholder="Dietary requirement"
-                                                                  required>
+                                                                  >
                             </div>
                         </div>
                     </div>

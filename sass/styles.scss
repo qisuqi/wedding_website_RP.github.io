@@ -413,7 +413,7 @@ Hero
 
   header {
     padding: 50px 0;
-    border-bottom: solid 1px rgba(255, 255, 255, 0.2);
+    border-bottom: solid 1px rgba(221, 16, 71, 0.6);
     position: relative;
     width: 1170px;
     margin: 0 auto;
@@ -497,6 +497,37 @@ Hero
 }
 
 @media (max-width: 768px) {
+
+  .header-nav {
+    position: relative;
+    display: block; /* Ensure the parent element is displayed on mobile */
+  }
+
+  .navicon {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    right: 10px;
+    top: 48px;
+    visibility: visible; /* Ensure it is visible on small screens */
+    z-index: 9999;
+    cursor: pointer;
+  }
+
+  .nav-toggle {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 99999;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  /* Menu when it's active (toggled on click) */
+  .header-nav.open .navicon {
+    display: block; /* Make sure it's displayed when active */
+  }
 
   .hero-content {
     flex-direction: column; /* Stack text above image */
@@ -1089,6 +1120,10 @@ Hero
 
         input:-ms-input-placeholder {
           color: $form-placeholder;
+        }
+
+        .form-input-group input[type="checkbox"] {
+          margin-right: 10px; /* Space between checkbox and label text */
         }
       }
     }
