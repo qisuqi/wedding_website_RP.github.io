@@ -66,7 +66,7 @@ $(document).ready(function () {
     /***************** Nav Transformicon ******************/
 
     /* When user clicks the Icon */
-    $('.nav-toggle').click(function () {
+    $(document).on('click', '.nav-toggle', function (event) {
         $(this).toggleClass('active');
         $('.header-nav').toggleClass('open');
         event.preventDefault();
@@ -191,7 +191,7 @@ $(document).ready(function () {
     //    });
 
     /********************** Countdown **********************/
-    // Set the date we're counting down to
+        // Set the date we're counting down to
     var countDownDate = new Date("June 14, 2025 00:00:00").getTime();
 
     // Update the countdown every 1 second
