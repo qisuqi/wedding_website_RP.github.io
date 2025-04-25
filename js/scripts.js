@@ -296,6 +296,7 @@ document.getElementById('codeForm').addEventListener('submit', function(event) {
         document.getElementById('fooddrink').classList.remove('hidden');
         document.getElementById('dresscode').classList.remove('hidden');
         document.getElementById('accommodation').classList.remove('hidden');
+        document.getElementById('taxi').classList.remove('hidden');
         document.getElementById('other').classList.remove('hidden');
         document.getElementById('map').classList.remove('hidden');
         document.getElementById('rsvp').classList.remove('hidden');
