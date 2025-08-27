@@ -278,47 +278,39 @@ $(document).ready(function () {
 
 });
 
-document.getElementById('codeForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form submission
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("codeForm").addEventListener("submit", function(e) {
+        e.preventDefault();
 
-    var code = parseInt(document.getElementById('code').value); // Parse the entered code as an integer
-    console.log("Entered code:", code); // Debug statement
+        var code = document.getElementById('code').value.trim(); // keep as string
+        var fridayCode = "23112025";
+        var sundayCode = "231125";
 
-    // Here you can define your secret code as a number
-    var fridayCode = 231125; // Change this to your desired numeric code
-    console.log("Correct code:", fridayCode); // Debug statement
-
-    var sundayCode = 23112025; // Change this to your desired numeric code
-    console.log("Correct code:", sundayCode); // Debug statement
-
-    // Check if entered code is correct
-    if (code === sundayCode) {
-        console.log("Code is correct!"); // Debug statement
-        document.getElementById('entryCode').style.display = 'none';
-        document.getElementById('invitation').classList.remove('hidden');
-        document.getElementById('welcome').classList.remove('hidden');
-        document.getElementById('timeline-friday').classList.remove('hidden');
-        document.getElementById('timeline-sunday').classList.remove('hidden');
-        document.getElementById('dresscode').classList.remove('hidden');
-        document.getElementById('accommodation').classList.remove('hidden');
-        document.getElementById('map').classList.remove('hidden');
-        document.getElementById('rsvp').classList.remove('hidden');
-        document.getElementById('codeForm').style.display = 'none';
-    } else if (code === fridayCode){
-        console.log("Code is correct!"); // Debug statement
-        document.getElementById('entryCode').style.display = 'none';
-        document.getElementById('invitation').classList.remove('hidden');
-        document.getElementById('welcome').classList.remove('hidden');
-        document.getElementById('timeline-sunday').classList.remove('hidden');
-        document.getElementById('dresscode').classList.remove('hidden');
-        document.getElementById('accommodation').classList.remove('hidden');
-        document.getElementById('map').classList.remove('hidden');
-        document.getElementById('rsvp').classList.remove('hidden');
-        document.getElementById('codeForm').style.display = 'none';
-    } else {
-        console.log("Incorrect code!"); // Debug statement
-        alert('Incorrect code! Please try again.');
-    }
+        if (code === sundayCode) {
+            console.log("Sunday code correct!");
+            document.getElementById('entryCode').style.display = 'none';
+            document.getElementById('invitation').classList.remove('hidden');
+            document.getElementById('welcome').classList.remove('hidden');
+            document.getElementById('timeline-friday').classList.remove('hidden');
+            document.getElementById('timeline-sunday').classList.remove('hidden');
+            document.getElementById('dresscode').classList.remove('hidden');
+            document.getElementById('accommodation').classList.remove('hidden');
+            document.getElementById('map').classList.remove('hidden');
+            document.getElementById('rsvp').classList.remove('hidden');
+        } else if (code === fridayCode) {
+            console.log("Friday code correct!");
+            document.getElementById('entryCode').style.display = 'none';
+            document.getElementById('invitation').classList.remove('hidden');
+            document.getElementById('welcome').classList.remove('hidden');
+            document.getElementById('timeline-sunday').classList.remove('hidden');
+            document.getElementById('dresscode').classList.remove('hidden');
+            document.getElementById('accommodation').classList.remove('hidden');
+            document.getElementById('map').classList.remove('hidden');
+            document.getElementById('rsvp').classList.remove('hidden');
+        } else {
+            alert('Incorrect code! Please try again.');
+        }
+    });
 });
 
 /********************** Extras **********************/
