@@ -89,7 +89,8 @@ $(document).ready(function () {
                 $('header').css({
                     "border-bottom": "none",
                     "padding": "35px 0",
-                    "background-color": "#bf515b"
+                    //"background": "url('../img/hero-min2.jpg') center center / cover no-repeat",
+                    "background-color": "#536748"
                 });
                 $('header .member-actions').css({
                     "top": "26px",
@@ -192,7 +193,7 @@ $(document).ready(function () {
 
     /********************** Countdown **********************/
         // Set the date we're counting down to
-    var countDownDate = new Date("June 14, 2025 00:00:00").getTime();
+    var countDownDate = new Date("November 23, 2025 00:00:00").getTime();
 
     // Update the countdown every 1 second
     var x = setInterval(function() {
@@ -225,17 +226,17 @@ $(document).ready(function () {
         },
         data: {
             // Event title
-            title: "Qiqi & George's Wedding",
+            title: "Parv & Rush's Wedding",
 
             // Event start date
-            start: new Date('Jun 14, 2025 12:00'),
+            start: new Date('Nov 23, 2025 12:00'),
 
             // Event duration (IN MINUTES)
             // duration: 120,
 
             // You can also choose to set an end time
             // If an end time is set, this will take precedence over duration
-            end: new Date('Jun 14, 2025 23:30'),
+            end: new Date('Nov 23, 2025 23:30'),
 
             // Event Address
             address: 'High Billinghurst Farm',
@@ -259,7 +260,7 @@ $(document).ready(function () {
         //if (MD5($('#invite_code').val()) !== '77d235e1d501503516c57bbecbbafdf6')  {
         //    $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
         //} else {
-        $.post('https://script.google.com/macros/s/AKfycbwymyTnfDNXCD467ZWqCQcQEUGggGnZGOIfpUPcTTMGUV00aViK4-blt9Tya-dxyZVFJQ/exec', data)
+        $.post('https://script.google.com/macros/s/AKfycbwGGgXdG0-jbMUbjFgzj0l9XGB-N3bLnGJZ9m_UeDinueYz8KCPJqjUJsD8qIgkoGDT7A/exec', data)
             .done(function (data) {
                 console.log(data);
                 if (data.result === "error") {
@@ -285,13 +286,15 @@ document.getElementById('codeForm').addEventListener('submit', function(event) {
     console.log("Entered code:", code); // Debug statement
 
     // Here you can define your secret code as a number
-    var correctCode = 140625; // Change this to your desired numeric code
+    var correctCode = 231125; // Change this to your desired numeric code
     console.log("Correct code:", correctCode); // Debug statement
 
     // Check if entered code is correct
     if (code === correctCode) {
         console.log("Code is correct!"); // Debug statement
+        document.getElementById('entryCode').style.display = 'none';
         document.getElementById('invitation').classList.remove('hidden');
+        document.getElementById('welcome').classList.remove('hidden');
         document.getElementById('timeline').classList.remove('hidden');
         document.getElementById('fooddrink').classList.remove('hidden');
         document.getElementById('dresscode').classList.remove('hidden');
