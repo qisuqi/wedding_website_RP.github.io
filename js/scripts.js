@@ -239,7 +239,7 @@ $(document).ready(function () {
             end: new Date('Nov 23, 2025 23:30'),
 
             // Event Address
-            address: 'High Billinghurst Farm',
+            address: 'Sri Guru Nanak Darbar Gurdwara',
 
             // Event Description
             description: "We can't wait to see you on our big day! <3"
@@ -247,7 +247,6 @@ $(document).ready(function () {
     });
 
     $('#add-to-cal').html(myCalendar);
-
 
     /********************** RSVP **********************/
     $('#rsvp-form').on('submit', function (e) {
@@ -286,21 +285,33 @@ document.getElementById('codeForm').addEventListener('submit', function(event) {
     console.log("Entered code:", code); // Debug statement
 
     // Here you can define your secret code as a number
-    var correctCode = 231125; // Change this to your desired numeric code
-    console.log("Correct code:", correctCode); // Debug statement
+    var fridayCode = 23112025; // Change this to your desired numeric code
+    console.log("Correct code:", fridayCode); // Debug statement
+
+    var sundayCode = 231125; // Change this to your desired numeric code
+    console.log("Correct code:", sundayCode); // Debug statement
 
     // Check if entered code is correct
-    if (code === correctCode) {
+    if (code === sundayCode) {
         console.log("Code is correct!"); // Debug statement
         document.getElementById('entryCode').style.display = 'none';
         document.getElementById('invitation').classList.remove('hidden');
         document.getElementById('welcome').classList.remove('hidden');
-        document.getElementById('timeline').classList.remove('hidden');
-        document.getElementById('fooddrink').classList.remove('hidden');
+        document.getElementById('timeline-friday').classList.remove('hidden');
+        document.getElementById('timeline-sunday').classList.remove('hidden');
         document.getElementById('dresscode').classList.remove('hidden');
         document.getElementById('accommodation').classList.remove('hidden');
-        document.getElementById('taxi').classList.remove('hidden');
-        document.getElementById('other').classList.remove('hidden');
+        document.getElementById('map').classList.remove('hidden');
+        document.getElementById('rsvp').classList.remove('hidden');
+        document.getElementById('codeForm').style.display = 'none';
+    } else if (code === fridayCode){
+        console.log("Code is correct!"); // Debug statement
+        document.getElementById('entryCode').style.display = 'none';
+        document.getElementById('invitation').classList.remove('hidden');
+        document.getElementById('welcome').classList.remove('hidden');
+        document.getElementById('timeline-sunday').classList.remove('hidden');
+        document.getElementById('dresscode').classList.remove('hidden');
+        document.getElementById('accommodation').classList.remove('hidden');
         document.getElementById('map').classList.remove('hidden');
         document.getElementById('rsvp').classList.remove('hidden');
         document.getElementById('codeForm').style.display = 'none';
