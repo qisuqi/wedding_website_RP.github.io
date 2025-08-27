@@ -285,10 +285,10 @@ document.getElementById('codeForm').addEventListener('submit', function(event) {
     console.log("Entered code:", code); // Debug statement
 
     // Here you can define your secret code as a number
-    var fridayCode = 23112025; // Change this to your desired numeric code
+    var fridayCode = 231125; // Change this to your desired numeric code
     console.log("Correct code:", fridayCode); // Debug statement
 
-    var sundayCode = 231125; // Change this to your desired numeric code
+    var sundayCode = 23112025; // Change this to your desired numeric code
     console.log("Correct code:", sundayCode); // Debug statement
 
     // Check if entered code is correct
