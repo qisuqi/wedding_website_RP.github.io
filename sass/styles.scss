@@ -52,7 +52,7 @@ a:hover, a:focus {
 }
 
 body {
-  font-family: $sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: $light;
   color: $txt-primary;
   -webkit-text-size-adjust: 100%;
@@ -68,6 +68,14 @@ ul, ol {
 ul li {
   list-style: none;
 }
+
+h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  color: #163203; /* your theme color */
+  text-align: center;
+}
+
 section .header {
   //padding-bottom: 30px;
   //border-bottom: 2px solid #163203; /* Line under the heading */
@@ -89,23 +97,6 @@ section .header {
 }
 .section-padding {
   padding: $section-padding;
-}
-
-#invitation {
-  position: relative;
-  background: url('../img/hero-min2.jpg') center center;
-}
-
-#invitation::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0); /* dark overlay with 50% opacity */
-}
-
-#invitation .container {
-  position: relative; /* keeps text above overlay */
-  z-index: 1;
 }
 
 .section-border {

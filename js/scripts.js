@@ -289,7 +289,6 @@ document.addEventListener("DOMContentLoaded", function() {
         if (code === sundayCode) {
             console.log("Sunday code correct!");
             document.getElementById('entryCode').style.display = 'none';
-            document.getElementById('invitation').classList.remove('hidden');
             document.getElementById('welcome').classList.remove('hidden');
             document.getElementById('timeline-friday').classList.remove('hidden');
             document.getElementById('timeline-sunday').classList.remove('hidden');
@@ -300,7 +299,6 @@ document.addEventListener("DOMContentLoaded", function() {
         } else if (code === fridayCode) {
             console.log("Friday code correct!");
             document.getElementById('entryCode').style.display = 'none';
-            document.getElementById('invitation').classList.remove('hidden');
             document.getElementById('welcome').classList.remove('hidden');
             document.getElementById('timeline-sunday').classList.remove('hidden');
             document.getElementById('dresscode').classList.remove('hidden');
