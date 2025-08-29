@@ -85,11 +85,11 @@
             <div class="header-content">
                 <div class="header-nav">
                     <nav>
-                        <ul class="primary-nav">
-                            <li><a href="#timeline-sunday">Timeline</a></li>
+                        <ul class="primary-nav" id="mainNav" style="display:none;">
+                            <li><a href="#timeline-friday" class="login">Friday</a></li>
+                            <li><a href="#timeline-sunday" class="login">Sunday</a></li>
                             <li><a href="#dresscode" class="login">Dress Code</a></li>
                             <li><a href="#accommodation" class="login">Accommodation</a></li>
-                            <li><a href="#map" class="login">Venue</a></li>
                         </ul>
                         <ul class="member-actions">
                             <li><a href="#rsvp" class="btn-white btn-small">RSVP</a></li>
@@ -110,12 +110,12 @@
 
                 <div class="hero-content">
                     <div class="text-container">
-                        <p class="intro" style="color: #2b542c; font-family: 'Indie Flower', cursive;">Parv and Rush</p>
-                        <p class="subtext" style="color: #2b542c; font-family: 'Indie Flower', cursive;">We are getting married!</p>
+                        <p class="intro" style="color: rgb(22,50,3); font-family: 'Indie Flower', cursive;">Parv and Rush</p>
+                        <p class="subtext" style="color: rgb(22,50,3); font-family: 'Indie Flower', cursive;">We are getting married!</p>
                     </div>
-                    <!--<div class="img-container">
-                        <img src="img/hero-min.jpg" alt="Placeholder Image" class="main-image">
-                    </div>-->
+                    <div class="img-container">
+                        <img src="img/rp-main.jpeg" alt="Placeholder Image" class="main-image">
+                    </div>
                     <!--<a href="#" class="btn btn-fill btn-large btn-margin-right">Scroll Down</a> -->
                 </div>
             </div>
@@ -141,24 +141,19 @@
     </div>
 </section>
 
-<section id="welcome" class="section-padding hidden">
-    <div class="container">
+<section id="welcome"
+         class="section-padding hidden"
+         style="background: url('img/hero-min1.jpeg') center center / cover no-repeat;
+        height: 100vh;">
+    <div class="container" style="margin-top: 200px;">
         <div class="row">
             <div class="col-md-12 text-center">
-                <h3 class="header" style="color: #163203"> Parv and Rush would love to invite you to celebrate their wedding </h3>
-                <h3 class="header" style="color: #163203; font-size: 40px"> - 23. 11. 2025 - </h3>
-            </div>
-            <div id="countdown"></div>
-        </div>
-        <div class="row section-padding">
-            <div class="col-md-4 text-center">
-                <img  class="modal-img" src="img/hero-min.jpg">
-            </div>
-            <div class="col-md-4 text-center">
-                <img  class="modal-img" src="img/hero-min.jpg">
-            </div>
-            <div class="col-md-4 text-center">
-                <img  class="modal-img" src="img/hero-min.jpg">
+                <div style="max-width: 500px; margin: 0 auto;">
+                    <h3 class="header" style="color: #163203; font-size: 25px">
+                        Parv and Rush would love to invite you to celebrate their wedding
+                    </h3>
+                </div>
+                <div id="countdown"></div>
             </div>
         </div>
     </div>
@@ -174,8 +169,6 @@
         </h3>
         <h5>Jaggo celebration and ladies sangeet</h5>
         <p>6pm - Midnight</p>
-
-        <p>Jaggo is ... Ladies sangeet is ... Please wear ... </p>
         <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2283.126245453184!2d-0.4301034882343128!3d51.69427809691733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876403287395f7d%3A0x3f521c400bb3553f!2sHunton%20Park!5e1!3m2!1sen!2suk!4v1756375705257!5m2!1sen!2suk" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
                 width="100%"
@@ -199,6 +192,11 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
+                <h3 style="font-size: 20px">Sri Guru Nanak Darbar Gurdwara</h3>
+                <h5>Saddington Street, Gravesend, DA12 1AG</h5>
+                <p>
+                    <a href="https://maps.app.goo.gl/a64o4VbeBuizusfP6">Open the map</a>
+                </p>
                 <div style="max-width: 500px; margin: 0 auto;">
                     <p>-- Arrival of Barrat 9am -- </p>
 
@@ -264,25 +262,6 @@
     </div>
 </section>
 
-<section id="map"
-         class="section-padding hidden"
-         style="background: url('img/hero-min1.jpeg') center center / cover no-repeat;
-            height: 100vh">
-    <div class="text-center">
-        <h3 class="header" style="color: #163203; font-size: 25px ">
-            Venue
-        </h3>
-        <h5>Sri Guru Nanak Darbar Gurdwara</h5>
-        <p>Saddington Street, Gravesend, DA12 1AG</p>
-        <p>
-            <a href="https://maps.app.goo.gl/a64o4VbeBuizusfP6">Open the map</a>
-        </p>
-        <img src="img/temple.jpg" alt="Example"
-             style="border: 3px solid #536748; border-radius: 50%;
-             width: 100%; max-width: 400px;">
-    </div>
-</section>
-
 <section id="rsvp"
          class="rsvp text-center hidden"
          style="background: url('img/hero-min1.jpeg') center center / cover no-repeat;
@@ -307,7 +286,7 @@
         <div class="row">
             <div class="col-md-6 col-md-offset-3">
                 <h3 class="header" style="color: #163203; font-size: 25px">RSVP</h3>
-                <p>We would greatly appreciate if you could RSVP before 1st March 2025</p>
+                <p>We would greatly appreciate if you could RSVP before 3rd October 2025</p>
                 <p>Please fill out the form per person</p>
                 <form id="rsvp-form" class="rsvp-form"
                       action=""
@@ -329,17 +308,6 @@
                                 <input type="checkbox" id="no" name="response" value="no" onclick="toggleInputs(this)">
                                 Sadly, I can't make it :(
                             </label>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-12 additional-inputs" id="additional-inputs-2" style="display: none">
-                            <div class="form-input-group">
-                                <i class="fa fa-cutlery"></i><input name="dietary" id="dietary"
-                                                                    class=""
-                                                                    placeholder="Dietary requirement"
-                            >
-                            </div>
                         </div>
                     </div>
                     <div class="row">

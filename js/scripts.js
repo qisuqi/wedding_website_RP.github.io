@@ -208,7 +208,11 @@ $(document).ready(function () {
         var days = Math.floor(distance / (1000 * 60 * 60 * 24));
 
         // Display the result in the element with id="countdown"
-        document.getElementById("countdown").innerHTML = days + " days left! ";
+        document.getElementById("countdown").innerHTML =
+            '<div style="display:inline-block; background:#163203; color:white; padding:15px 25px; ' +
+            'border-radius:12px; font-size:28px; font-weight:bold; box-shadow:0 4px 10px rgba(0,0,0,0.2);">' +
+            days + ' <span style="font-size:18px; font-weight:normal;">days left!</span>' +
+            '</div>';
 
         // If the countdown is finished, display a message
         if (distance < 0) {
@@ -229,14 +233,14 @@ $(document).ready(function () {
             title: "Parv & Rush's Wedding",
 
             // Event start date
-            start: new Date('Nov 23, 2025 12:00'),
+            start: new Date('Nov 23, 2025 9:00'),
 
             // Event duration (IN MINUTES)
             // duration: 120,
 
             // You can also choose to set an end time
             // If an end time is set, this will take precedence over duration
-            end: new Date('Nov 23, 2025 23:30'),
+            end: new Date('Nov 23, 2025 16:00'),
 
             // Event Address
             address: 'Sri Guru Nanak Darbar Gurdwara',
@@ -279,12 +283,21 @@ $(document).ready(function () {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
+
+    var restrictedLinks = document.querySelectorAll("#mainNav .login");
+
+    restrictedLinks.forEach(function(link) {
+        link.style.display = "none";
+    });
+
     document.getElementById("codeForm").addEventListener("submit", function(e) {
         e.preventDefault();
 
         var code = document.getElementById('code').value.trim(); // keep as string
-        var fridayCode = "23112025";
+        var fridayCode = "parvrush";
         var sundayCode = "231125";
+        var familyCode = "family"
+        var familySundayCode = "1111"
 
         if (code === sundayCode) {
             console.log("Sunday code correct!");
@@ -294,7 +307,6 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById('timeline-sunday').classList.remove('hidden');
             document.getElementById('dresscode').classList.remove('hidden');
             document.getElementById('accommodation').classList.remove('hidden');
-            document.getElementById('map').classList.remove('hidden');
             document.getElementById('rsvp').classList.remove('hidden');
         } else if (code === fridayCode) {
             console.log("Friday code correct!");
@@ -303,11 +315,43 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById('timeline-sunday').classList.remove('hidden');
             document.getElementById('dresscode').classList.remove('hidden');
             document.getElementById('accommodation').classList.remove('hidden');
-            document.getElementById('map').classList.remove('hidden');
             document.getElementById('rsvp').classList.remove('hidden');
-        } else {
+        } else if (code === familyCode) {
+            console.log("Family code correct!");
+            document.getElementById('entryCode').style.display = 'none';
+            document.getElementById('welcome').classList.remove('hidden');
+            document.getElementById('timeline-friday').classList.remove('hidden');
+            document.getElementById('timeline-sunday').classList.remove('hidden');
+            document.getElementById('rsvp').classList.remove('hidden');
+        } else if (code === familySundayCode) {
+            console.log("Family Friday code correct!");
+            document.getElementById('entryCode').style.display = 'none';
+            document.getElementById('welcome').classList.remove('hidden');
+            document.getElementById('timeline-sunday').classList.remove('hidden');
+            document.getElementById('rsvp').classList.remove('hidden');
+        }
+        else {
             alert('Incorrect code! Please try again.');
         }
+
+        var linkRules = {
+            "timeline-friday": [sundayCode, familyCode],
+            "timeline-sunday": [fridayCode, sundayCode, familyCode, familySundayCode],
+            "dresscode": [fridayCode, sundayCode],
+            "accommodation": [fridayCode, sundayCode]
+        };
+
+        var nav = document.getElementById("mainNav");
+        nav.style.display = "block"; // show nav after code entry
+
+        restrictedLinks.forEach(function(link) {
+            var href = link.getAttribute("href").replace("#", "");
+            if (linkRules[href] && linkRules[href].includes(code)) {
+                link.style.display = "inline"; // show allowed
+            } else {
+                link.style.display = "none";   // hide disallowed
+            }
+        });
     });
 });
 
@@ -367,8 +411,6 @@ function toggleInputs(checkbox) {
         });
     }
 }
-
-
 
 // MD5 Encoding
 var MD5 = function (string) {

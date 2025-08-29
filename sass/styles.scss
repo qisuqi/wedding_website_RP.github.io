@@ -356,7 +356,7 @@ Hero
 
 .hero {
   min-height: 600px;
-  background: url('../img/hero-min.jpg') center center / cover no-repeat; //#b35894;
+  background: url('../img/hero-min1.jpeg') center center / cover no-repeat; //#b35894;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -1217,3 +1217,17 @@ Extras
   vertical-align: top; /* Align them at the top if the heights are different */
 }
 
+.countdown-box {
+  display: inline-block;
+  background: #163203;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 12px;
+  font-size: 28px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.countdown-box span {
+  font-size: 18px;
+  font-weight: normal;
+}
