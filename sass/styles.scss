@@ -1241,3 +1241,40 @@ Extras
   font-size: 18px;
   font-weight: normal;
 }
+
+
+#dresscodes p {
+  font-size: 16px;  /* default for desktop */
+  line-height: 1.5;
+}
+
+@media (max-width: 480px) {
+  #dresscodes p {
+    font-size: 12px;
+    line-height: 1.3;
+  }
+}
+
+#dresscodef p {
+  font-size: 16px;  /* default for desktop */
+  line-height: 1.5;
+}
+
+@media (max-width: 480px) {
+  #dresscodef p {
+    font-size: 12px;
+    line-height: 1.3;
+  }
+}
+
+#timeline-sunday p {
+  font-size: 16px;  /* default for desktop */
+  line-height: 1.5;
+}
+
+@media (max-width: 480px) {
+  #timeline-sunday p {
+    font-size: 14px;
+    line-height: 1.3;
+  }
+}
