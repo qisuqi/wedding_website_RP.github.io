@@ -305,16 +305,15 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById('welcome').classList.remove('hidden');
             document.getElementById('timeline-friday').classList.remove('hidden');
             document.getElementById('timeline-sunday').classList.remove('hidden');
-            document.getElementById('dresscode').classList.remove('hidden');
-            document.getElementById('accommodation').classList.remove('hidden');
+            document.getElementById('dresscodef').classList.remove('hidden');
+            document.getElementById('dresscodes').classList.remove('hidden');
             document.getElementById('rsvp').classList.remove('hidden');
         } else if (code === fridayCode) {
             console.log("Friday code correct!");
             document.getElementById('entryCode').style.display = 'none';
             document.getElementById('welcome').classList.remove('hidden');
             document.getElementById('timeline-sunday').classList.remove('hidden');
-            document.getElementById('dresscode').classList.remove('hidden');
-            document.getElementById('accommodation').classList.remove('hidden');
+            document.getElementById('dresscodes').classList.remove('hidden');
             document.getElementById('rsvp').classList.remove('hidden');
         } else if (code === familyCode) {
             console.log("Family code correct!");
@@ -337,8 +336,8 @@ document.addEventListener("DOMContentLoaded", function() {
         var linkRules = {
             "timeline-friday": [sundayCode, familyCode],
             "timeline-sunday": [fridayCode, sundayCode, familyCode, familySundayCode],
-            "dresscode": [fridayCode, sundayCode],
-            "accommodation": [fridayCode, sundayCode]
+            "dresscodef": [sundayCode],
+            "dresscodes": [fridayCode, sundayCode]
         };
 
         var nav = document.getElementById("mainNav");
